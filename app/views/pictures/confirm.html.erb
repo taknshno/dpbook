@@ -1,0 +1,11 @@
+<h3>以下の内容で送信します</h3>
+
+<%= form_with(model: @picture, local: true) do |form| %>
+  <%= form.hidden_field :title %>
+  <%= form.hidden_field :content %>
+
+  <p>写真:<%= @picture.image %></p>
+  <p>コメント:<%= @picture.content %></p>
+  <%= form.submit  "投稿" %>
+  <%= form.submit "編集", name: 'back' %>
+<% end %>
