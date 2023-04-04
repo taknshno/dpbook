@@ -8,7 +8,7 @@
 
 <% @pictures.each do |picture| %>
   <tr>
-    <td><%= picture.image %></td>
+    <td><%= image_tag picture.image.url %></td>
     <td><%= picture.content %></td>
     <td>[<%= link_to '詳細', picture_path(picture.id) %>]</td>
     <td>[<%= link_to "編集", edit_picture_path(picture.id), data: { confirm: '本当に編集しますか' } %>]</td>
