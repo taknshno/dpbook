@@ -5,42 +5,34 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <%= stylesheet_link_tag 'normalize', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <header class="header clearfix">
-      <img src="/assets/logo.jpg" class="logo_image">
-      <div class="top_menu clearfix">
-        <ul>
-          <% flash.each do |key, value| %>
-            <%= content_tag(:div, value, class: "#{key}") %>
-          <% end %>
-
-          <% if logged_in? %>
-            <li><%= link_to "Profile", user_path(current_user.id) %></li>
-            <li><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
-          <% else %>
-            <li><%= link_to "Sign up", new_user_path %></li>
-            <li><%= link_to "Login", new_session_path %></li>
-          <% end %>
+    <div class="wrapper">
+      <header class="header clearfix">
+        <%= link_to pictures_path do %>
+          <%= image_tag '/assets/logo.jpg', class: 'logo_image' %>
+        <% end %>
+        <div class="top_menu clearfix">
+          <ul>
+            <% if logged_in? %>
+              <li><%= link_to '投稿する', new_picture_path %></li>
+              <li><%= link_to "プロフィール", user_path(current_user.id) %></li>
+              <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
+            <% else %>
+              <li><%= link_to "サインアップ", new_user_path %></li>
+              <li><%= link_to "ログイン", new_session_path %></li>
+            <% end %>
+          </ul>
         </div>
-
-        <%
-=begin%>
- <li><a href="index.html">ホーム</a></li>
-        <li><a href="#">事業内容</a></li>
-        <li><a href="#">会社概要</a></li>
-        <li><a href="#">お問い合わせ</a></li> 
-<%
-=end%>
-      </ul>
-    </header>
-
-
-
-    <%= yield %>
+      </header>
+      <div class="content clearfix">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

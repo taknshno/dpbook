@@ -1,13 +1,14 @@
-<p id="notice"><%= notice %></p>
-<p>
-  <%= image_tag @picture.image.url %>
-</p>
-<p>
-  <%= @picture.content %>
-</p>
-<p>
-  <%= @picture.user.name %>
-</p>
+<div class="wrapper">
+  <div>
+    <%= image_tag @picture.image.url %>
+  </div>
+  <div>
+    <%= @picture.content %>
+  </div>
+  <div>
+    <%= @picture.user.name %>
+  </div>
+</div>
 
 [<%= link_to '編集', edit_picture_path(@picture) %>]
 

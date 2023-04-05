@@ -1,4 +1,4 @@
-<h1>ユーザー登録</h1>
+<h1>サインアップ</h1>
 
 <% if @user.errors.any? %>
   <div id="error_explanation">
@@ -11,18 +11,24 @@
   </div>
 <% end %>
 
-<%= form_with(model: @user, local: true) do |f| %>  
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-
-  <%= f.submit "Create my account" %>
+<%= form_with(model: @user, local: true) do |f| %> 
+  <table>
+    <tr>
+      <th>名前</th>
+      <td><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+      <th>メールアドレス</th>
+      <td><%= f.email_field :email %></td>
+    </tr>
+    <tr>
+      <th>パスワード</th>
+      <td><%= f.password_field :password %></td>
+    </tr>
+    <tr>
+      <th>パスワード(再確認)</th>
+      <td><%= f.password_field :password_confirmation %></td>
+    </tr>
+  </table>
+  <%= f.submit "登録" %>
 <% end %>

@@ -1,17 +1,29 @@
+html {
+  height: 100%;
+}
+
 body {
-  background-color: #F0F2F5;
+  height: 100%;
+}
+
+.wrapper {
+  margin: 0 auto;
+  min-height: 100%;
+  position: relative;
 }
 
 .header {
   background-color: #FFFFFF;
   height: 50px;
-  font-size: 1.5rem;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+  position: relative;
+  font-size: 1.0rem;
+  box-shadow: 0 5px 3px 0px rgba(0, 0, 0, 0.05);
 }
 
 .logo_image {
   float: left;
-  margin: 5px;
+  margin-left: 10px;
+  margin-top: 5px;
 }
 
 .top_menu {
@@ -30,8 +42,42 @@ body {
   list-style: none;
 }
 
+.content {
+  background-color: #F0F2F5;
+  padding: 20px;
+}
+
 .clearfix:after {
   content: "";
   display: block;
   clear: both;
+}
+
+.card {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.card-img-top:hover {
+  border-color: dodgerblue;
+  transition: .7s;
+
+}
+
+
+.card-body i {
+  font-size: 25px;
+}
+
+.card-button {
+  text-align: center;
+}
+
+.card-button i {
+  font-size: 20px;
+  padding: 0 10px;
+}
+
+.card-button a {
+  color: dodgerblue;
 }
