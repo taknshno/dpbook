@@ -72,7 +72,7 @@ html body {
 .card-picture {
   position: relative;
   width: 100%;
-  min-height: 62%;
+  min-height: 60%;
 }
 
 .card-picture img {
@@ -88,24 +88,16 @@ html body {
   padding: 10px 0;
 }
 
-.card-body i {
-  font-size: 25px;
-}
-
 .card-button {
-  padding-top: 5px;
+  padding: 5px 0;
   text-align: center;
 }
 
-.card-button i {
+.card-button span {
   font-size: 20px;
   padding: 0 10px;
 }
 
 .card-button a {
   color: dodgerblue;
-}
-
-.test-card {
-  margin-bottom: 20px;
 }
