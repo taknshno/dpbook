@@ -6,6 +6,10 @@ body {
   height: 100%;
 }
 
+html body {
+  background-color: #F0F2F5;
+}
+
 .wrapper {
   margin: 0 auto;
   min-height: 100%;
@@ -43,7 +47,7 @@ body {
 }
 
 .content {
-  background-color: #F0F2F5;
+  margin: 0 auto;
   padding: 20px;
 }
 
@@ -53,23 +57,43 @@ body {
   clear: both;
 }
 
+/* .picture-area {
+  width: 100%;
+} */
+
 .card {
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   overflow: hidden;
+  margin: 0 auto 60px;
+  max-width: 376px;
+  height: 370px;
 }
 
-.card-img-top:hover {
-  border-color: dodgerblue;
-  transition: .7s;
-
+.card-picture {
+  position: relative;
+  width: 100%;
+  min-height: 62%;
 }
 
+.card-picture img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.card-text {
+  padding: 10px 0;
+}
 
 .card-body i {
   font-size: 25px;
 }
 
 .card-button {
+  padding-top: 5px;
   text-align: center;
 }
 
@@ -80,4 +104,8 @@ body {
 
 .card-button a {
   color: dodgerblue;
+}
+
+.test-card {
+  margin-bottom: 20px;
 }

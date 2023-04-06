@@ -1,32 +1,37 @@
-<div class="row justify-content-center">
-  <% @pictures.each do |picture| %>
-    <div class="col-12 col-md-6 col-lg-3">
-      <div class="card" style="width: 15rem;">
-        <%= link_to picture_path(picture.id) do %>
-          <%= image_tag picture.image.url, class: "card-img-top"%>
-        <% end %>
-        <div class="card-body">
-          <h4 class="card-title"><%= picture.content.truncate(15) %></h4>
-          <div class="card-text">by <%= picture.user.name %></div>
-          <div class="card-button">
-            <%= link_to picture_path(picture.id) do %>
-                <i class="bi bi-info-square"></i>
-            <% end %>
-            <% if picture.user.id == current_user.id %>
-              <%= link_to edit_picture_path(picture.id), data:{confirm:"こちらの投稿を編集しますか？"} do %>
-                  <i class="bi bi-pencil-square"></i>
+<div class="picture-area">
+  <div class="row">
+    <% @pictures.each do |picture| %>
+      <div  class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="test-card">
+        <div class="card" style="width: 14rem;">
+          <div class="card-picture">
+          <%= link_to picture_path(picture.id) do %>
+            <%= image_tag picture.image.url, class: "card-img-top"%>
+          <% end %>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title"><%= picture.content.truncate(15) %></h4>
+            <div class="card-text">by <%= picture.user.name %></div>
+            <div class="card-button">
+              <%= link_to picture_path(picture.id) do %>
+                  <i class="bi bi-info-square"></i>
               <% end %>
-              <%= link_to picture_path(picture.id), method: :delete, data:{confirm:"こちらの投稿を削除しますか？"} do %>
-                  <i class="bi bi-trash"></i>
+              <% if picture.user.id == current_user.id %>
+                <%= link_to edit_picture_path(picture.id), data:{confirm:"こちらの投稿を編集しますか？"} do %>
+                    <i class="bi bi-pencil-square"></i>
+                <% end %>
+                <%= link_to picture_path(picture.id), method: :delete, data:{confirm:"こちらの投稿を削除しますか？"} do %>
+                  <i class="bi bi-trash" ></i>
+                <% end %>
+              <% else %>
+                <i class="bi bi-pencil-square"></i>
+                <i class="bi bi-trash"></i>
               <% end %>
-            <% else %>
-              <i class="bi bi-pencil-square"></i>
-              <i class="bi bi-trash"></i>
-            <% end %>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
-
