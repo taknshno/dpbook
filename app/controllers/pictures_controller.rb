@@ -15,7 +15,8 @@ class PicturesController < ApplicationController
       render :new
     else
       if @picture.save
-        redirect_to pictures_path, notice: "写真を投稿しました"
+        flash[:success] = '写真を投稿しました'
+        redirect_to pictures_path
       else
         render :new
       end
@@ -30,7 +31,8 @@ class PicturesController < ApplicationController
 
   def update
     if @picture.update(picture_params)
-      redirect_to pictures_path, notice: "記事を編集しました"
+      flash[:success] = '記事を編集しました'
+      redirect_to pictures_path
     else
       render :edit
     end
@@ -38,7 +40,8 @@ class PicturesController < ApplicationController
 
   def destroy
     @picture.destroy
-    redirect_to pictures_path, notice:"記事を削除しました"
+    flash[:success] = '記事を削除しました'
+    redirect_to pictures_path
   end
 
   def confirm

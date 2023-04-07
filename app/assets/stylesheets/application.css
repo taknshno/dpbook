@@ -102,3 +102,7 @@ html body {
 .card-button a {
   color: dodgerblue;
 }
+
+.alert {
+  max-width: 60%
+}
