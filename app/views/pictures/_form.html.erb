@@ -3,14 +3,12 @@
     <div id="error_explanation">
       <h2><%= @picture.errors.count %>件のエラーがあります</h2>
       <ul>
-
-      <% @picture.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @picture.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
-
   <div class="picture_image">
     <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
     <%= form.file_field :image %>
@@ -20,7 +18,6 @@
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
-
   <div class="actions">
     <%= form.submit %>
   </div>
