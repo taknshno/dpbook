@@ -13,24 +13,24 @@
   </head>
   <body>
     <div class="login-wrapper">
-      <div class="d-none d-md-block col-12 hidden-box"></div>
+      <%# <div class="d-none d-md-block hidden-box"></div> %>
       <div class="login-content">
-        <div class="row">
+        <div class="d-flex align-items-center justify-content-center flex-wrap">
           <%# ロゴ %>
-          <div class="col-xs-12 col-sm-12 col-md-6">
-            <div class="login-title text-center text-md-start">
+          <div class="flex-fill">
+            <%# <div class="col-12 flex-md-fill"> %>
+            <div class="login-title">
               <div class="login-title-logo">
                 <%= image_tag '/assets/dp_logo.png', class:"img-fluid" %>
               </div>
-              <h5>写真の投稿ができるwebサイト</h5>
+              <h4>写真の投稿ができるwebサイト</h4>
             </div>
           </div>
-
           <%# フォーム %>
-          <div class="col-xs-12 col-sm-12 col-md-6">
+          <div class="flex-fill">
+            <%# <div class="col-12 flex-md-fill"> %>
             <div class="login-form">
               <%# メッセージ %>
-
               <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
                 <div class="form-container">
                   <div class="input-group  input-group-lg input-container">
@@ -43,9 +43,7 @@
                 <div class="button-container">
                   <%= f.submit "ログイン", class:"btn btn-primary btn-lg w-100" %>
                 </div>
-
               <% end %>
-              
               <div class="form-border"></div>
               <div class="button-container">
                 <%= button_to "アカウントを作成", new_user_path, class:"btn btn-success btn-lg w-75" %>
@@ -54,11 +52,10 @@
           </div>
         </div>
       </div>
-            <%# フッター %>
+      <%# フッター %>
       <footer class="footer">
-        <div class="copyright">Divic © 2023 </div>
+        <div class="copyright">DIVIC Corp. © 2023 </div>
       </footer>
-          </div>
-
+    </div>
   </body>
 </html>

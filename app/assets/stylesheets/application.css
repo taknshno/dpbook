@@ -15,6 +15,7 @@ html body {
   min-width: 500px;
   width: 100%;
   background-color: #F0F2F5;
+  box-sizing: border-box;
 }
 
 .header {
@@ -50,7 +51,10 @@ html body {
 .content {
   margin: 0 auto;
   max-width: 1000px;
+  min-width: 500px;
   padding: 20px;
+  box-sizing: border-box;
+
 }
 
 .picture-area {
@@ -98,11 +102,11 @@ html body {
   color: dodgerblue;
 }
 
-.alert {
-  width: 100%
-}
-
 /* ログイン関係 開始 */
+
+.container {
+  display: flex;
+}
 
 .login-wrapper {
   background-color: #F0F2F5;
@@ -114,16 +118,16 @@ html body {
 
 .login-content {
   max-width: 800px;
+  min-height: 500px;
+  padding: 20px 0 20px;
   width: auto;
-  padding: 0 0 110px;
   margin: 0 auto;
 }
 
 .login-title {
-  width: 100%;
-  display: inline-block;
   text-align: center;
-  padding: 110px 0 0;
+  width: 400px;
+  margin: 0 auto;
 }
 
 .login-title-logo {
@@ -131,14 +135,14 @@ html body {
   display: block;
 }
 
-.login-title h5{
+.login-title h4{
   display: inline-block;
 }
 
 .login-form{
   margin: 40px auto;
   padding: 6px 8px 20px;
-  max-width: 380px;
+  width: 400px;
   background-color: #FFF;
   border-radius: 4px;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
@@ -173,6 +177,10 @@ html body {
 }
 
 /* ログイン関係 終了 */
+
+.alert {
+  display:inline-block;
+}
 
 .footer{
   width: 100%;
