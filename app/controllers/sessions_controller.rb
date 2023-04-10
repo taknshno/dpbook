@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   skip_before_action :login_required, only: [:new, :create]
 
   def new
+    render layout: false
   end
 
   def create
@@ -12,7 +13,7 @@ class SessionsController < ApplicationController
       redirect_to pictures_path
     else
       flash[:danger] = 'ログインできませんでした'
-      render :new
+      render :new, layout: false
     end
   end
 
