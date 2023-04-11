@@ -30,10 +30,35 @@
           </ul>
         </div>
       </header>
+      <%= render 'layouts/flash_messages' %>
       <div class="content clearfix">
-        <%= render 'layouts/flash_messages' %>
         <%= yield %>
       </div>
     </div>
   </body>
 </html>
+
+<%# 
+<div class="fullscreen">
+  <div class="col-sm-6">
+    <button class="form-control" onclick="myAlertTop()">show alert top</button>
+  </div>
+  <div class="col-sm-6">
+    <button class="form-control" onclick="myAlertBottom()">show alert bottom</button>
+  </div>
+</div>
+<div class="myAlert-top alert alert-success">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Success!</strong> Indicates a successful or positive action.
+</div>
+<div class="myAlert-bottom alert alert-danger">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
+</div>
+
+
+ %>
+
+
+
+

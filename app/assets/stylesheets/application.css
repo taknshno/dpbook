@@ -20,10 +20,27 @@ html body {
 
 .header {
   height: 50px;
-  position: relative;
   font-size: 0.9rem;
   box-shadow: 0 5px 3px 0px rgba(0, 0, 0, 0.05);
   background-color: #FFFFFF;
+  position: relative;
+}
+
+.alert-wrapper {
+  position: absolute;
+  margin-top: 5px;
+  right: 5px;
+  width: 350px;
+  z-index: 1;
+}
+
+.alert {
+  position: absolute;
+  margin-top: 10px;
+  right: 5px;
+  height: 50px;
+  width: 350px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .icon-image {
@@ -177,10 +194,6 @@ html body {
 }
 
 /* ログイン関係 終了 */
-
-.alert {
-  display:inline-block;
-}
 
 .footer{
   width: 100%;
