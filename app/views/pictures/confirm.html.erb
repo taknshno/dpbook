@@ -1,11 +1,39 @@
-<h3>以下の内容で送信します</h3>
-<%= form_with(model: @picture, url: pictures_path, local: true) do |form| %>
-  <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
-  <%= form.hidden_field :image_cache %>
-  <%= form.hidden_field :content %>
-  <%= form.submit  "投稿する" %>
-<% end %>
-<%= form_with(model: @picture, url:new_picture_path, local:true, method:"get") do |form| %>
-  <%= form.hidden_field :image_cache %>
-  <%= form.submit "編集に戻る", name: 'back' %>
-<% end %>
+<div class="confirm-area">
+  <h4>以下の内容で送信します</h4>
+  <div>
+    <%= form_with(model: @picture, url: pictures_path, local: true) do |form| %>
+      <div>
+        <div class="card" style="width: 30rem;">
+
+          <div class="">
+              <%= image_tag @picture.image.url, class: "card-img-top"%>
+          </div>
+
+          <div class="card-body">
+
+            <h4 class="card-title"><%= @picture.content %></h4>
+
+            <div class="card-text">by <%= @picture.user.name %></div>
+
+            <div class="card-button">
+              <span class="bi bi-info-square" title="詳細"></span>
+              <span class="bi bi-pencil-square" title="編集不可"></span>
+              <span class="bi bi-trash" title="削除不可"></span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <div class="button-container">
+        <%= form.submit  "投稿する", class:"btn btn-primary btn-lg w-100" %>
+      </div>
+    <% end %>
+    <%= form_with(model: @picture, url:new_picture_path, local:true, method:"get") do |form| %>
+      <%= form.hidden_field :image_cache %>
+      <div class="button-container">
+        <%= form.submit "編集に戻る", name: 'back', class:"btn btn-secondary btn-lg w-75" %>
+      </div>
+    <% end %>
+  </div>
+</div>

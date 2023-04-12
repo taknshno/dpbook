@@ -15,9 +15,7 @@
     <div class="login-wrapper">
       <div class="login-content">
         <div class="d-flex align-items-center justify-content-center flex-wrap">
-          <%# ロゴ %>
           <div class="flex-fill">
-            <%# <div class="col-12 flex-md-fill"> %>
             <div class="login-title">
               <div class="login-title-logo">
                 <%= image_tag '/assets/dp_logo.png', class:"img-fluid" %>
@@ -25,11 +23,8 @@
               <h4>写真の投稿ができるwebサイト</h4>
             </div>
           </div>
-          <%# フォーム %>
           <div class="flex-fill">
-            <%# <div class="col-12 flex-md-fill"> %>
             <div class="login-form">
-              <%# メッセージ %>
               <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
                 <div class="form-container">
                   <div class="input-group  input-group-lg input-container">
@@ -51,7 +46,6 @@
           </div>
         </div>
       </div>
-      <%# フッター %>
       <footer class="footer">
         <div class="copyright">DIVIC Corp. © 2023 </div>
       </footer>

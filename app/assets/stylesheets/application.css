@@ -4,6 +4,7 @@ html {
 
 body {
   height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 html body {
@@ -71,10 +72,13 @@ html body {
   min-width: 500px;
   padding: 20px;
   box-sizing: border-box;
-
 }
 
 .picture-area {
+  margin: 0 auto;
+}
+
+.confirm-area {
   margin: 0 auto;
 }
 
@@ -117,6 +121,28 @@ html body {
 
 .card-button a {
   color: dodgerblue;
+}
+
+.footer{
+  width: 100%;
+  height: 100px;
+  padding-top: 20px;
+  background-color: #fff;
+  position: absolute;
+  text-align: center;
+}
+
+.copyright {
+  max-width: 980px;
+  font-size: 0.8rem;
+  color: #737373; 
+  margin: 0 auto;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 /* ログイン関係 開始 */
@@ -182,6 +208,7 @@ html body {
 .button-container {
   padding: 6px;
   text-align: center;
+  margin: 0 auto;
   padding: 6px 0;
 }
 
@@ -193,26 +220,56 @@ html body {
   margin: 20px 0;
 }
 
-/* ログイン関係 終了 */
+/* 投稿ページ用CSS */
 
-.footer{
-  width: 100%;
-  height: 100px;
-  padding-top: 20px;
-  background-color: #fff;
-  position: absolute;
+.post-wrapper {
+  margin-top:20px;
+}
+
+.post-title {
+  border-bottom-color: rgb(219,219,219);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  box-sizing: border-box;
+}
+
+.img-preview {
+  width: 380px;
+  height: 380px;
+  margin: 0 auto;
+  padding: 6px 8px 20px;
+  color: #050505;
+  background-color: #FFF;
+  border-radius: 4px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+}
+
+.img-preview img {
+  max-width: 100%;
+  height: auto;
+}
+
+.post-form {
+  color: #050505;
+  width: 380px;
+  background-color: #FFF;
+  margin: 0 auto;
+  padding: 6px 8px 6px;
+  border-radius: 4px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+
+.post-form h4 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
   text-align: center;
 }
 
-.copyright {
-  max-width: 980px;
-  font-size: 0.8rem;
-  color: #737373; 
-  margin: 0 auto;
-}
-
-.clearfix:after {
-  content: "";
-  display: block;
-  clear: both;
+.post-form h5 {
+  font-size: 16px;
+  text-align: left;
 }
