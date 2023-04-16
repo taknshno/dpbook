@@ -18,6 +18,7 @@ class PicturesController < ApplicationController
         flash[:success] = '写真を投稿しました'
         redirect_to pictures_path
       else
+        flash[:danger] = '入力に誤りがあります'
         render :new
       end
     end
@@ -46,7 +47,10 @@ class PicturesController < ApplicationController
 
   def confirm
     @picture = current_user.pictures.build(picture_params)
-    render :new if @picture.invalid?
+    if @picture.invalid?
+      flash[:danger] = '入力に誤りがあります'
+      render :new 
+    end
   end
 
   private
