@@ -232,6 +232,10 @@ html body {
   box-sizing: border-box;
 }
 
+.card-wrapper {
+  max-width: 400px;
+}
+
 .img-preview {
   width: 380px;
   height: 380px;
