@@ -1,35 +1,30 @@
-<div class="post-wrapper">
-  <%= form_with(model: @picture, local: true ,url: choose_new_or_edit ) do |form| %>
+<div class="col-12 col-md-6 px-0 pb-2">
+  <%= form_with(model: @picture, local: true, url: choose_new_or_edit ) do |form| %>
     <%= form.hidden_field :image_cache %>
     <%= form.hidden_field :content %>
-    <div class="d-flex justify-content-center flex-wrap" style="gap: 20px;">
-      <div>
-        <div class="img-preview" id="prv">
-          <% if @picture.image && @picture.image.url %>
-            <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
-          <% else %>
-            <h5>ここに選択した画像が表示されます</h5>
-          <% end %>
-        </div>
-      </div>
-      <div>
-        <div class="post-form">
-          <div class="input-container post-title">
-            <h4>投稿画面</h4>
-          </div>
-          <div class="form-container">
-            <div class="input-container">
-              <%= form.file_field :image %>
-            </div>
-            <div class="input-container">
-              <%= form.text_area :content, placeholder:"コメントを入力（最大100文字）", class:"form-control form-control-lg" %>
-            </div>
-            <div class="button-container">
-              <%= form.submit "投稿する", class:"btn btn-primary btn-lg w-100" %>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="post-img-preview" id="prv">
+      <% if @picture.image && @picture.image.url %>
+        <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
+      <% else %>
+        <h5>ここに選択した画像が表示されます</h5>
+      <% end %>
     </div>
-  <% end %>
-</div>
+  </div>
+  <div class="col-12 col-md-6 px-0 pl-md-3 pb-2">
+    <div class="post-form">
+      <div class="input-container post-title">
+        <h4>新規投稿</h4>
+        <div class="form-container">
+          <div class="input-container">
+            <%= form.file_field :image, class:"form-control post-file-field" %>
+          </div>
+          <div class="input-container">
+            <%= form.text_area :content, rows: 3, placeholder:"コメントを入力（最大100文字）", class:"form-control form-control-lg" %>
+          </div>
+          <div class="button-container">
+            <%= form.submit "投稿する", class:"btn btn-primary btn-lg w-100" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>

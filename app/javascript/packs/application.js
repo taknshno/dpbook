@@ -9,12 +9,14 @@ Rails.start()
 // Turbolinks.start()
 ActiveStorage.start()
 
+// アラート消去
 $(function(){
   setTimeout(function(){
     $('.alert').hide(); 
   }, 4000);
 });
 
+// 画像のプレビューを表示
 if (document.URL.match(/new/)||document.URL.match(/confirm/)){
   document.addEventListener('DOMContentLoaded', () => {
     const createImageHTML = (blob) => {

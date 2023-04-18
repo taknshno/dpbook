@@ -146,10 +146,6 @@ html body {
 
 /* ログイン関係 開始 */
 
-.container {
-  display: flex;
-}
-
 .login-wrapper {
   background-color: #F0F2F5;
 }
@@ -201,7 +197,7 @@ html body {
 }
 
 .input-container {
-  padding: 6px 0;
+  padding: 5px 0;
 }
 
 .button-container {
@@ -225,22 +221,33 @@ html body {
   margin-top:20px;
 }
 
-.post-title {
-  border-bottom-color: rgb(219,219,219);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  box-sizing: border-box;
-}
 
 .card-wrapper {
   max-width: 400px;
 }
 
-.img-preview {
-  width: 380px;
-  height: 380px;
-  margin: 0 auto;
-  padding: 6px 8px;
+.post-title {
+  color: #050505;
+  background-color: #FFF;
+  margin: 0;
+  padding: 6px 8px 6px;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+
+.post-title h4 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  margin-top:0.5rem;
+  text-align: center;
+}
+
+
+.post-img-preview {
+  padding: 6px 8px 6px;
+  min-height: 380px;
   color: #050505;
   background-color: #FFF;
   border-radius: 4px;
@@ -251,23 +258,20 @@ html body {
   align-items: center;
 }
 
-.img-preview h5 {
+.post-img-preview h5 {
   display: inline-block;
   margin: 0;
   width: 100%;
 }
 
-.img-preview img {
+.post-img-preview img {
   max-width: 100%;
   height: auto;
 }
 
 .post-form {
   color: #050505;
-  width: 380px;
   background-color: #FFF;
-  margin: 0 auto;
-  padding: 6px 8px 6px;
   border-radius: 4px;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
@@ -281,5 +285,13 @@ html body {
 
 .post-form h5 {
   font-size: 16px;
+  text-align: center;
+}
+
+.post-input-label {
   text-align: left;
+}
+
+.post-file-field {
+  height: auto !important;
 }
