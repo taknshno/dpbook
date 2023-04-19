@@ -295,3 +295,87 @@ html body {
 .post-file-field {
   height: auto !important;
 }
+
+.article-container {
+  padding: 6px 8px 6px;
+  line-height: 16px;
+  max-width: 600px;
+  margin:0 auto;
+  color: #050505;
+  background-color: #FFF;
+  border-radius: 4px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+  display: block;
+}
+
+.article-header {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 12px;
+  padding: 12px 16px 0 16px;
+
+}
+
+.article-data{
+  display: block;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.article-data span {
+  display: block;
+  line-height: 20px;
+  margin: 5px 0;
+  width: auto;
+  max-width: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.article-data h5 {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  width: auto;
+  color: rgb(101,103,107);
+  margin: 5px 0;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: left;
+}
+
+.article-edit-icon {
+  display: flex;
+  align-self: flex-start;
+  line-height: 24px;
+  font-size: 25px;
+  padding: 8px;
+  align-items: stretch;
+}
+.article-edit-icon span {
+  padding: 10px;
+}
+
+.article-content {
+  display: block;
+  text-align: left;
+  padding: 4px 16px 16px 16px;
+}
+
+.article-content h4 {
+  display: block;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.article-img-preview {
+  display: block;
+  position: relative;
+}
+
+.article-img-preview img {
+  max-width: 100%;
+  height: auto;
+}
