@@ -7,19 +7,31 @@
         <span>以下の情報を入力してください。</span>
       </div>
       <div class="form-border"></div>
+      <% if @user.errors.any? %>
+        <div class="form-error-message">
+          <h5>以下のエラーがあります。</h5>
+          <div id="error_explanation">
+            <ul>
+              <% @user.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      <% end %>
       <div class="signup-input">
         <%= form_with(model: @user, local: true) do |f| %>
           <div class="input-group-lg input-container">
-            <%= f.text_field :name, placeholder:"名前", class:"form-control form-control-lg"  %>
+            <%= f.text_field :name, placeholder:"名前", class:"form-control form-control-lg", required: true %>
           </div>
           <div class="input-group-lg input-container">
-            <%= f.email_field :email, placeholder:"メールアドレス", class:"form-control form-control-lg"  %>
+            <%= f.email_field :email, placeholder:"メールアドレス", class:"form-control form-control-lg", required: true %>
           </div>
           <div class="input-group-lg input-container">
-            <%= f.password_field :password, placeholder:"パスワード", class:"form-control form-control-lg"  %>
+            <%= f.password_field :password, placeholder:"パスワード", class:"form-control form-control-lg", required: true %>
           </div>
           <div class="input-group-lg input-container">
-            <%= f.password_field :password_confirmation, placeholder:"パスワード(再確認)", class:"form-control form-control-lg"  %>
+            <%= f.password_field :password_confirmation, placeholder:"パスワード(再確認)", class:"form-control form-control-lg", required: true %>
           </div>
         </div>
         <div class="button-container">

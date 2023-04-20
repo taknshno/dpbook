@@ -17,7 +17,7 @@ $(function () {
 });
 
 // 画像のプレビューを表示
-if (document.URL.match(/new/) || document.URL.match(/edit/)) {
+if (document.URL.match(/new/) || document.URL.match(/edit/) || document.URL.match(/confirm/)) {
   document.addEventListener("DOMContentLoaded", () => {
     const createImageHTML = (blob) => {
       const imageElement = document.getElementById("prv");

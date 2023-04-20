@@ -60,6 +60,34 @@ html body {
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
 
+.form-error-message {
+  color: rgb(114,28,36);
+  font-size: 15px;
+  line-height: 20px;
+  margin: 10px 0;
+  padding: 0 10px;
+  text-align: left;
+  border: 1px solid rgb(245,198,203);
+  background-color: rgb(248,215,218);
+}
+
+.form-error-message h5 {
+  font-size: clamp(15px, 16px, 17px);
+  font-weight: 600;
+  margin-top: 0.5rem;
+  text-align: left !important;
+}
+
+.form-error-message ul {
+  margin: 0;
+  padding: 0 20px;
+}
+
+.form-error-message li {
+  margin: 0;
+  padding-bottom: 5px;
+}
+
 .icon-image {
   float: left;
   margin-left: 10px;
@@ -176,7 +204,7 @@ html body {
 }
 
 .form-container {
-  padding: 6px 0;
+  padding: 0;
 }
 
 .input-container {
@@ -227,7 +255,9 @@ html body {
   font-size: 16px;
   font-weight: 600;
   line-height: 20px;
-  margin-top: 0.5rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0;
+  padding: 0.3rem;
   text-align: center;
 }
 
