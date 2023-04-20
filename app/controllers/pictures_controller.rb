@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-  before_action :set_picture, only: [:show, :edit, :update, :destroy]
+  before_action :set_picture, only: %i[show edit update destroy]
 
   def index
     @pictures = Picture.all
@@ -19,10 +19,10 @@ class PicturesController < ApplicationController
       render :new
     else
       if @picture.save
-        flash[:success] = '写真を投稿しました'
+        flash[:success] = "写真を投稿しました"
         redirect_to pictures_path
       else
-        flash[:danger] = '入力に誤りがあります'
+        flash[:danger] = "入力に誤りがあります"
         render :new
       end
     end
@@ -36,7 +36,7 @@ class PicturesController < ApplicationController
 
   def update
     if @picture.update(picture_params)
-      flash[:success] = '記事を編集しました'
+      flash[:success] = "記事を編集しました"
       redirect_to pictures_path
     else
       render :edit
@@ -45,14 +45,14 @@ class PicturesController < ApplicationController
 
   def destroy
     @picture.destroy
-    flash[:success] = '記事を削除しました'
+    flash[:success] = "記事を削除しました"
     redirect_to pictures_path
   end
 
   def confirm
     @picture = current_user.pictures.build(picture_params)
     if @picture.invalid?
-      flash[:danger] = '入力に誤りがあります'
+      flash[:danger] = "入力に誤りがあります"
       render :new
     end
   end
