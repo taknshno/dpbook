@@ -232,6 +232,21 @@ html body {
   padding: 0 20px;
 }
 
+.empty-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.empty-wrapper h2 {
+  color: gray;
+}
+
+.no-image {
+  max-width: 300px;
+  max-height: 300px;
+}
+
 .card-wrapper {
   max-width: 400px;
 }
