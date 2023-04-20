@@ -1,3 +1,7 @@
+/*
+ *= require_self
+ */
+
 html {
   height: 100%;
 }
@@ -8,14 +12,19 @@ body {
 }
 
 html body {
-  background-color: #FFFFFF;
+  background-color: #F0F2F5;
 }
 
 .wrapper {
-  min-height: 100%;
+  display: block;
   min-width: 500px;
   width: 100%;
-  background-color: #F0F2F5;
+}
+
+.content {
+  margin: 0 auto;
+  padding: 20px 20px 0;
+  height: auto;
   box-sizing: border-box;
 }
 
@@ -29,7 +38,7 @@ html body {
 
 .alert-wrapper {
   position: absolute;
-  margin-top: 5px;
+  top: 5px;
   right: 5px;
   width: 350px;
   z-index: 1;
@@ -37,10 +46,18 @@ html body {
 
 .alert {
   position: absolute;
-  margin-top: 10px;
+  top: 10px;
   right: 5px;
   width: 350px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.form-box {
+  margin: 40px auto;
+  padding: 6px 8px 20px;
+  background-color: #FFF;
+  border-radius: 4px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
 
 .icon-image {
@@ -65,16 +82,16 @@ html body {
   list-style: none;
 }
 
-.content {
-  margin: 0 auto;
-  max-width: 1000px;
-  min-width: 500px;
-  padding: 20px;
+.picture-wrapper {
+  height: calc(100vh-70px);
   box-sizing: border-box;
 }
 
-.picture-area {
+.picture-display {
+  min-width: 500px;
+  max-width: 1000px;
   margin: 0 auto;
+  padding: 20px 0 0;
 }
 
 .confirm-area {
@@ -104,8 +121,22 @@ html body {
   margin: auto;
 }
 
+.card-body {
+padding-top : 10px !important;
+}
+
 .card-text {
-  padding: 10px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-text span {
+  font-size: 15px !important;
+}
+
+.card-text h5 {
+  font-size: 13px !important;
 }
 
 .card-button {
@@ -124,17 +155,17 @@ html body {
 
 .footer{
   width: 100%;
-  height: 100px;
+  height: 100%;
   padding-top: 20px;
-  background-color: #fff;
-  position: absolute;
+  background-color: #FFFFFF;
+  display: block;
   text-align: center;
 }
 
 .copyright {
   max-width: 980px;
   font-size: 0.8rem;
-  color: #737373; 
+  color: #737373;
   margin: 0 auto;
 }
 
@@ -144,53 +175,6 @@ html body {
   clear: both;
 }
 
-/* ログイン関係 開始 */
-
-.login-wrapper {
-  background-color: #F0F2F5;
-}
-
-.hidden-box {
-  height: 70px
-}
-
-.login-content {
-  max-width: 800px;
-  min-height: 500px;
-  padding: 20px 0 20px;
-  width: auto;
-  margin: 0 auto;
-}
-
-.login-title {
-  text-align: center;
-  width: 400px;
-  margin: 0 auto;
-}
-
-.login-title-logo {
-  padding-bottom: 16px;
-  display: block;
-}
-
-.login-title h4{
-  display: inline-block;
-}
-
-.login-form{
-  margin: 40px auto;
-  padding: 6px 8px 20px;
-  width: 400px;
-  background-color: #FFF;
-  border-radius: 4px;
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
-}
-
-.login-content h4{
-  text-align: center;
-  color: #333;
-  margin-left: 15px;
-}
 
 .form-container {
   padding: 6px 0;
@@ -215,15 +199,20 @@ html body {
   margin: 20px 0;
 }
 
-/* 投稿ページ用CSS */
-
 .post-wrapper {
-  margin-top:20px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 
 .card-wrapper {
   max-width: 400px;
+}
+
+.show-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .post-title {
@@ -297,10 +286,10 @@ html body {
 }
 
 .article-container {
-  padding: 6px 8px 6px;
+  padding: 6px 8px 16px 8px;
   line-height: 16px;
-  max-width: 600px;
-  margin:0 auto;
+  max-width: auto;
+  margin:0 auto 10px;
   color: #050505;
   background-color: #FFF;
   border-radius: 4px;
@@ -317,7 +306,7 @@ html body {
 
 }
 
-.article-data{
+.article-data {
   display: block;
   flex-direction: column;
   flex-grow: 1;
@@ -351,7 +340,7 @@ html body {
   align-self: flex-start;
   line-height: 24px;
   font-size: 25px;
-  padding: 8px;
+  padding: 8px 0;
   align-items: stretch;
 }
 .article-edit-icon span {

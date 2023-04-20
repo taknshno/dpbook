@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :login_required, only: [:new, :create]
-  
+
   def new
     @user = User.new
   end
@@ -9,7 +9,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       redirect_to user_path(@user.id)
+      flash[:success] = 'アカウントを作成しました'
     else
+      flash[:danger] = '入力に誤りがあります'
       render :new
     end
   end

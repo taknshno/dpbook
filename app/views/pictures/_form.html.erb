@@ -1,3 +1,4 @@
+<% content_for(:title, formtitle) %>
 <div class="col-12 col-md-6 px-0 pb-2">
   <%= form_with(model: @picture, local: true, url: choose_new_or_edit ) do |form| %>
     <%= form.hidden_field :image_cache %>
@@ -24,7 +25,7 @@
             <%= form.text_area :content, rows: 3, placeholder:"コメントを入力（最大100文字）", class:"form-control form-control-lg" %>
           </div>
           <div class="button-container">
-            <%= form.submit "投稿する", class:"btn btn-primary btn-lg w-100" %>
+            <%= form.submit btnlabel, class:"btn btn-primary btn-lg w-100" %>
           </div>
         </div>
       </div>

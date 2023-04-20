@@ -38,13 +38,8 @@ html body {
   display: inline-block;
 }
 
-.login-form{
-  margin: 40px auto;
-  padding: 6px 8px 20px;
+.login-form-box{
   width: 400px;
-  background-color: #FFF;
-  border-radius: 4px;
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
 
 .login-content h4{

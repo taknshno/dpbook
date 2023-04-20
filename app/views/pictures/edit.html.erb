@@ -1,8 +1,7 @@
-<div class="container-fluid">
-  <div class="row justify-content-md-center ">
-    <div class="col-12 mb-1 post-form-title">
-      <h4>編集画面</h4>
+<div class="post-wrapper">
+  <div class="container-fluid">
+    <div class="row justify-content-between">
+      <%= render partial: "form", locals: { formtitle: "投稿を編集", btnlabel:"保存する" } %>
     </div>
-    <%= render partial: "form", locals: { formtitle: "投稿を編集" } %>
   </div>
 </div>

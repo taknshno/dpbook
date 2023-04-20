@@ -1,34 +1,32 @@
-<h1>サインアップ</h1>
-
-<% if @user.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this <%= @user.name %> from being saved:</h2>
-    <ul>
-    <% @user.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-    </ul>
+<% content_for(:title, 'DPbook') %>
+<div class="signup-wrapper">
+  <div class="form-box">
+    <div class="signup-form">
+      <div class="signup-title">
+        <h2>アカウント作成</h2>
+        <span>以下の情報を入力してください。</span>
+      </div>
+      <div class="form-border"></div>
+      <div class="signup-input">
+        <%= form_with(model: @user, local: true) do |f| %>
+          <div class="input-group-lg input-container">
+            <%= f.text_field :name, placeholder:"名前", class:"form-control form-control-lg"  %>
+          </div>
+          <div class="input-group-lg input-container">
+            <%= f.email_field :email, placeholder:"メールアドレス", class:"form-control form-control-lg"  %>
+          </div>
+          <div class="input-group-lg input-container">
+            <%= f.password_field :password, placeholder:"パスワード", class:"form-control form-control-lg"  %>
+          </div>
+          <div class="input-group-lg input-container">
+            <%= f.password_field :password_confirmation, placeholder:"パスワード(再確認)", class:"form-control form-control-lg"  %>
+          </div>
+        </div>
+        <div class="button-container">
+          <%= f.submit "アカウント作成", class:"btn btn-success btn-lg w-50" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-<% end %>
-
-<%= form_with(model: @user, local: true) do |f| %> 
-  <table>
-    <tr>
-      <th>名前</th>
-      <td><%= f.text_field :name %></td>
-    </tr>
-    <tr>
-      <th>メールアドレス</th>
-      <td><%= f.email_field :email %></td>
-    </tr>
-    <tr>
-      <th>パスワード</th>
-      <td><%= f.password_field :password %></td>
-    </tr>
-    <tr>
-      <th>パスワード(再確認)</th>
-      <td><%= f.password_field :password_confirmation %></td>
-    </tr>
-  </table>
-  <%= f.submit "登録" %>
-<% end %>
+</div>
